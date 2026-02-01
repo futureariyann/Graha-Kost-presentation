@@ -13,32 +13,56 @@ import {
   Code,
   Clock,
   CheckCircle2,
-  Gift
+  Gift,
+  Megaphone,
+  Target,
+  Wifi,
+  ScanBarcode,
+  Ban,
+  UserPlus,
+  LayoutGrid,
+  Car,
+  Shirt,
+  Wrench,
+  Bell,
+  ArrowRight,
+  Upload,
+  Download,
+  Palette,
+  Database,
+  Rocket,
+  Lock,
+  FolderCheck,
+  HeartHandshake
 } from 'lucide-react';
 
 export const SLIDES: SlideData[] = [
   {
     id: 1,
     layout: SlideLayout.TITLE,
-    title: "GRAHA KOST v2.0: Digital Transformation Proposal",
-    subtitle: "Scalable Property Management System for 1000+ Rooms",
-    content: "Command 1000 Rooms from Your Phone — Zero Commission, Fully Automated",
-    footer: "Prepared by: Flowmind Agency | For: Bapak Agung Rizki Sanjaya | Date: Januari 2026"
+    title: "GRAHA KOST v2.0: Transformasi Digital untuk 1000 Kamar",
+    subtitle: "Scalable Property Management System",
+    content: "Dari manajemen manual yang memakan waktu, ke sistem autopilot yang memaksimalkan profit Anda.",
+    footer: "Prepared by: Flowmind Creative Tech Agency | For: Bapak Agung Rizki Sanjaya | Date: February 2026"
   },
   {
     id: 2,
     layout: SlideLayout.SPLIT,
-    title: "The Bottom Line: Menuju Efisiensi Total",
-    subtitle: "Executive Summary",
-    content: "Kami merancang peta jalan untuk mengubah Graha Kost dari manajemen konvensional menjadi properti berbasis teknologi yang berjalan otomatis. Backend Admin telah berjalan stabil (Investasi Fase 1). Next: Web App (PWA) & Mobile App.",
+    title: "The Bottom Line: Efisiensi Total",
+    subtitle: "Dari Chaos Manual Menuju Manajemen 1000 Kamar Terstruktur",
+    content: `Current Reality:
+Pengelolaan 300 kamar secara manual saat ini sudah mencapai batas kapasitas. Tanpa sistem, ekspansi ke 1000 kamar akan meningkatkan resiko human error secara eksponensial.
+
+The Scale-Up Solution:
+Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin existing Anda akan mampu mengelola 3x lipat jumlah kamar dengan beban kerja yang sama atau lebih ringan.`,
     highlights: [
-      "INVESTASI: Rp 25.000.000 (One-time)",
-      "RETURN: ~Rp 20.000.000/bulan",
-      "BREAK-EVEN: 1.5 Bulan ⚡",
-      "DELIVERY: Juni 2026 (16 minggu)"
+      "📊 VISIBILITY 100%: Pantau seluruh aset dalam satu dashboard.",
+      "⚡ VELOCITY: Percepat siklus tagihan dan booking.",
+      "🎯 SCALABILITY: Infrastruktur siap untuk 1000+ kamar.",
+      "📈 OPTIMIZATION: Maksimalkan SDM yang ada."
     ],
-    // Visual: Tablet showing dashboard analytics - fits "Efficiency" and "Digital"
-    visualPrompt: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000"
+    // Visual: Modern Apartment/Building
+    visualPrompt: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
   },
   {
     id: 3,
@@ -120,22 +144,53 @@ export const SLIDES: SlideData[] = [
   {
     id: 6,
     layout: SlideLayout.FEATURES,
-    title: "Fitur Unggulan Kelas Enterprise",
-    subtitle: "Dibagi untuk Penghuni dan Administrator",
-    content: "Two ecosystems working in harmony.",
+    title: "Fitur Sistem yang Dikembangkan",
+    subtitle: "Modul operasional untuk skala 1000 kamar dan 50 unit",
     extra: {
-      left: [
-        { title: "Instant Booking", desc: "Upload KTP, bayar DP hitungan menit." },
-        { title: "Digital Contract", desc: "Tanda tangan sah hukum & Paperless." },
-        { title: "Payment History", desc: "Riwayat transparan & Invoice digital." },
-        { title: "Complaint Tracking", desc: "Lapor kerusakan dengan foto real-time." }
-      ],
-      right: [
-        { title: "One-Click Verify", desc: "Validasi pembayaran massal cepat." },
-        { title: "Occupancy Dashboard", desc: "Monitor ketersediaan live satu layar." },
-        { title: "Financial Report", desc: "Laporan omzet otomatis, export Excel." }
+      features: [
+        {
+          title: "Manajemen Keuangan & Dashboard",
+          icon: LayoutGrid,
+          items: [
+            "Visualisasi real-time status 1000 kamar (terisi/kosong/jatuh tempo)",
+            "Auto-generasi invoice dan reminder via WhatsApp",
+            "Pembukuan terpisah per 50 unit dengan konsolidasi pusat",
+            "Prediksi cashflow 30 hari ke depan dan laporan otomatis"
+          ]
+        },
+        {
+          title: "Manajemen Penghuni",
+          icon: Users,
+          items: [
+            "Database lengkap: profil, KTP, kontak darurat, nomor plat kendaraan",
+            "Tracking kontrak dengan notifikasi perpanjangan otomatis",
+            "Riwayat pembayaran dan unduh kwitansi digital",
+            "Emergency contact dan catatan khusus penghuni"
+          ]
+        },
+        {
+          title: "Operasional Harian",
+          icon: Wrench,
+          items: [
+            "Ticketing perbaikan kerusakan dengan foto dan prioritas (urgent/normal)",
+            "Tracking status perbaikan dari masuk hingga selesai",
+            "Sistem pencatatan laundry: tracking credit/billing & notifikasi pickup",
+            "Inventaris aset kamar untuk maintenance preventif"
+          ]
+        },
+        {
+          title: "Pemasaran & Growth",
+          icon: TrendingUp,
+          items: [
+            "Referral code system: penghuni dapat kode unik, tracking komisi otomatis",
+            "Pipeline calon penyewa (inquiry → survey → booking → DP → check-in)",
+            "Notifikasi otomatis tagihan, reminder, dan pengumuman broadcast",
+            "Tracking sumber leads (Instagram/TikTok/referral)"
+          ]
+        }
       ]
-    }
+    },
+    footer: "Semua fitur diakses via HP Android dan laptop Windows. Tidak memerlukan hardware tambahan (scanner, IoT, maupun perangkat khusus)."
   },
   {
     id: 7,
@@ -169,50 +224,57 @@ export const SLIDES: SlideData[] = [
   {
     id: 8,
     layout: SlideLayout.ROI,
-    title: "Analisis ROI: Mengapa Investasi Ini Menguntungkan?",
-    subtitle: "Transfer dari Operasional Boros ke Aset Permanen",
+    title: "Scaling Strategy: 300 to 1000 Rooms",
+    subtitle: "Mengapa Sistem Digital Wajib untuk Ekspansi",
+    content: "Tanpa sistem, biaya operasional akan naik sebanding dengan jumlah kamar (Linear Cost). Dengan Flowmind, biaya operasional menjadi Flat (Fixed Cost) meskipun jumlah kamar naik 300%.",
     highlights: [
-      "Stop Komisi Platform: Rp 15.000.000/bln",
-      "Efisiensi Admin: Rp 5.000.000/bln",
-      "Total Hemat: Rp 20.000.000 / Bulan"
+      "Current (300 Kamar): Admin mulai kewalahan, human error meningkat.",
+      "Manual Scaling (1000 Kamar): Butuh 10 Admin (Rasio 1:100), Gaji membengkak.",
+      "Digital Scaling (1000 Kamar): Tetap 3 Admin, Revenue naik 300%, Cost Flat."
     ],
     stats: [
-      { label: "INVESTASI", value: "Rp 25 Jt" },
-      { label: "HEMAT/BLN", value: "Rp 20 Jt" },
-      { label: "BREAK EVEN", value: "1.25 BLN" }
+      { label: "POTENSI REVENUE", value: "Rp 18 M / Thn", desc: "Estimasi @1000 Kamar" },
+      { label: "HEMAT GAJI ADMIN", value: "Rp 300 Jt+", desc: "Efisiensi SDM per tahun" },
+      { label: "BIAYA PLATFORM", value: "0 Rupiah", desc: "100% Direct Booking" }
     ],
-    footer: "ROI: 960% di Tahun Pertama"
+    footer: "Rasio Industri Manual: 1 Admin max menangani 100 Kamar. Sistem memecahkan batasan ini."
   },
   {
     id: 9,
     layout: SlideLayout.CHECKLIST,
-    title: "Lingkup Pengembangan",
-    subtitle: "Paket Business Preferred — Rp 25.000.000",
-    highlights: [
-      "Premium UI/UX Design Custom (Sesuai brand Graha Kost)",
-      "Full Stack Development (Web PWA + Mobile App + Backend)",
-      "Quality Assurance & Load Testing (1000+ user)",
-      "Deployment & Go-Live Support (Play Store/App Store)",
-      "1 Year Warranty (3 Bulan Support + 9 Bulan Bug Fix)"
+    title: "Lingkup Pengembangan (Scope of Work)",
+    subtitle: "Paket Business Preferred",
+    content: "Kami memberikan solusi *end-to-end*. Anda terima beres, sistem siap pakai.",
+    extra: [
+      { 
+        title: "1. Visual & Experience", 
+        items: ["Custom UI/UX Design", "Wireframing & Prototyping", "Sesuai Brand Identity Graha Kost"], 
+        icon: Palette,
+        color: "text-purple-400"
+      },
+      { 
+        title: "2. Technical Development", 
+        items: ["Web Admin Dashboard (PWA)", "Mobile App Penghuni (Hybrid)", "Backend API & Database"], 
+        icon: Code,
+        color: "text-blue-400"
+      },
+      { 
+        title: "3. Quality Assurance", 
+        items: ["Load Testing (1000 Users)", "Security Penetration Test", "User Acceptance Test (UAT)"], 
+        icon: ShieldCheck,
+        color: "text-green-400"
+      },
+      { 
+        title: "4. Deployment & Launch", 
+        items: ["Play Store / App Store Setup", "Domain & Server Configuration", "Staff Training"], 
+        icon: Rocket,
+        color: "text-orange-400"
+      },
     ],
-    footer: "SOURCE CODE 100% MILIK ANDA. No Vendor Lock-in."
+    footer: "🔒 JAMINAN: 100% SOURCE CODE OWNERSHIP & NO VENDOR LOCK-IN"
   },
   {
     id: 10,
-    layout: SlideLayout.SPLIT,
-    title: "Biaya Operasional Infrastruktur (OPEX)",
-    subtitle: "Yang Dibutuhkan untuk Menjaga Sistem Online",
-    content: "Estimasi Biaya Normal: Rp 6.000.000 / Tahun (Mencakup VPS Server, Managed Database, Domain + SSL, dan Cloudflare Pro).",
-    highlights: [
-      "🎁 PENAWARAN SPESIAL FLOWMIND:",
-      "Untuk paket BUSINESS PREFERRED, biaya infrastruktur TAHUN PERTAMA DITANGGUNG SEPENUHNYA.",
-      "Anda hemat Rp 6jt di tahun pertama!"
-    ],
-    // Visual: High-tech Server Room with blue/gold tones
-    visualPrompt: "https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80&w=2000"
-  },
-  {
-    id: 11,
     layout: SlideLayout.TIMELINE,
     title: "Timeline Pengerjaan: 16 Minggu",
     subtitle: "Target Launch: 1 Juni 2026",
@@ -224,68 +286,170 @@ export const SLIDES: SlideData[] = [
     ]
   },
   {
-    id: 12,
-    layout: SlideLayout.SPLIT,
-    title: "Strategi Kemitraan Jangka Panjang",
-    subtitle: "Kami Tidak Build and Leave.",
-    content: "TAHUN 1: Build & Stabilize. Garansi bug fixing, support prioritas. TAHUN 2+: Maintenance & Scale (Optional Rp 2.5jt/bln).",
-    highlights: [
-      "Kepemilikan Penuh",
-      "No Vendor Lock-in",
-      "Source Code di tangan Anda"
-    ],
-    // Visual: Professional Handshake / Partnership
-    visualPrompt: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=2000"
-  },
-  {
-    id: 13,
+    id: 11,
     layout: SlideLayout.PRICING,
     title: "Pilihan Paket Investasi",
     subtitle: "Pilih Skema yang Sesuai Kebutuhan",
     extra: [
       {
         name: "STARTER",
-        price: "Rp 22.000.000",
+        price: "Rp 22 Juta",
         features: ["Infrastruktur Thn 1: ❌", "Support: 1 Bulan", "Maintenance: Bayar bln ke-2"],
         rec: false
       },
       {
         name: "BUSINESS PREFERRED",
-        price: "Rp 25.000.000",
+        price: "Rp 25 Juta",
         features: ["Infrastruktur Thn 1: ✅", "Support: 3 Bulan", "Maintenance: Bayar bln ke-4"],
         rec: true
       },
       {
         name: "ENTERPRISE",
-        price: "Rp 35.000.000",
+        price: "Rp 35 Juta",
         features: ["Infrastruktur Thn 1: ✅", "Support: 1 Tahun VIP", "Maintenance: GRATIS 1 Tahun"],
         rec: false
       }
-    ]
+    ],
+    footer: "Maintenance service mulai dari Rp 2.500.000 untuk kontrak 1 tahun pertama."
+  },
+  {
+    id: 12,
+    layout: SlideLayout.SPLIT,
+    title: "Infrastruktur & Keamanan Digital",
+    subtitle: "Bonus Eksklusif Paket Business Preferred",
+    content: "**Estimasi Biaya Normal: Rp 6.000.000 / Tahun**\nBiaya ini mencakup penyewaan infrastruktur cloud berstandar industri untuk menjamin keamanan data dan uptime 24/7:",
+    highlights: [
+      "🖥️ VPS Cloud Server (High Performance)",
+      "🗄️ Managed Database & Daily Backup",
+      "🔒 Domain .com & SSL Security",
+      "🛡️ Cloudflare Enterprise Protection"
+    ],
+    extra: {
+      specialBox: {
+        title: "🎁 ANDA HEMAT 6 JUTA (TAHUN KE-1)",
+        content: "Khusus untuk paket BUSINESS PREFERRED, kami menanggung biaya infrastruktur ini sepenuhnya di tahun pertama.",
+        highlight: "Gratis Setup & Konfigurasi Awal",
+        subtext: "Fokus pada operasional kost, biarkan kami menangani teknis server.",
+        details: [
+            "Monitoring Server 24 Jam",
+            "Security Patching Rutin"
+        ]
+      }
+    },
+    // No visualPrompt needed, renderer will handle full width
+  },
+  {
+    id: 13,
+    layout: SlideLayout.SPLIT,
+    title: "Partnership Lifecycle",
+    subtitle: "Menjaga Keberlanjutan Sistem Jangka Panjang",
+    content: "**Fase 1: Development & Warranty (0-3 Bulan)**\nFokus pada pembangunan aset digital yang solid. Termasuk garansi bug fixing intensif pasca-launching untuk memastikan sistem berjalan mulus sesuai operasional Graha Kost.",
+    extra: {
+      specialBox: {
+        title: "Fase 2: Operational Assurance",
+        content: "Sistem digital seperti mobil; butuh servis rutin agar tidak mogok. Kami menjadi 'Bengkel Resmi' Anda.",
+        highlight: "Rp 2.500.000 / Bulan (Flat)",
+        subtext: "Investasi kecil untuk melindungi omzet milyaran. Mencegah sistem down, data hilang, atau serangan siber.",
+        details: [
+          "Cover Biaya Server & Database",
+          "WhatsApp API Quota",
+          "Prioritas Support Teknis"
+        ]
+      }
+    },
+    visualPrompt: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
   },
   {
     id: 14,
     layout: SlideLayout.COMPARISON,
     title: "Mengapa Memilih Flowmind?",
-    subtitle: "Kualitas Enterprise, Harga Startup",
+    subtitle: "Smart Investment vs High Risk Options",
     extra: [
-      { name: "Software House", pros: [], cons: ["Mahal (35-50jt)", "Birokrasi Lambat"] },
-      { name: "Flowmind", pros: ["Hemat (25jt)", "Agile & Cepat", "Expert Team"], cons: [], highlight: true },
-      { name: "In-House Hire", pros: [], cons: ["Gaji Rutin (15jt/bln)", "Drama HR"] }
+      { 
+        name: "In-House Programmer", 
+        pros: ["Standby di lokasi"], 
+        cons: [
+          "Biaya Tinggi: Gaji Rp 15Jt/bln (Rp 180Jt/thn)",
+          "Resiko Turnover: Programmer resign = Sistem mati",
+          "Biaya Hidden: BPJS, THR, Laptop, Ruangan",
+          "Single Point of Failure"
+        ],
+        icon: UserPlus
+      },
+      { 
+        name: "Flowmind Agency", 
+        pros: [
+          "Hemat: One-time cost (Setara 2 bulan gaji programmer)",
+          "Expert Team: Paham bisnis kost & teknis",
+          "No Turnover Risk: Didukung tim, bukan perorangan",
+          "Server Gratis Tahun Pertama (Hemat 6jt)"
+        ], 
+        cons: [], 
+        highlight: true,
+        icon: CheckCircle2
+      },
+      { 
+        name: "Software House Lain", 
+        pros: ["Tim teknis banyak"], 
+        cons: [
+          "Mahal: Project sejenis biasanya Rp 50Jt+",
+          "Vendor Lock-in: Source code sering ditahan",
+          "Biaya Maintenance Mahal & Respons Lambat",
+          "Tidak Paham Lapangan (Cuma bisa coding)"
+        ],
+        icon: Building2
+      }
     ]
   },
   {
     id: 15,
     layout: SlideLayout.CHECKLIST,
-    title: "Jaminan Aset & Deliverables",
-    subtitle: "Apa yang Anda Terima Setelah Project Selesai?",
-    highlights: [
-      "100% Source Code Ownership (Git)",
-      "Technical Documentation (Admin & API Guide)",
-      "Aplikasi Live (Web & Mobile Published)",
-      "Training & Handover Meeting"
+    title: "Serah Terima & Hak Kepemilikan",
+    subtitle: "Aset Digital Anda, 100% Kendali Anda",
+    content: "Kami memprioritaskan transparansi. Tidak ada 'Vendor Lock-in'. Semua aset yang dibangun adalah Intellectual Property (IP) Graha Kost.",
+    extra: [
+      { 
+        title: "1. Intellectual Property (IP)", 
+        items: [
+          "Full Source Code (Akses Repositori Git)", 
+          "Credential Database & Cloud Server", 
+          "Environment Variables & Secrets"
+        ], 
+        icon: Database,
+        color: "text-blue-400"
+      },
+      { 
+        title: "2. Production Assets", 
+        items: [
+          "Web Admin Dashboard (Live)", 
+          "Mobile Apps (File .APK & .AAB)", 
+          "Domain & Akun Hosting Cloudflare"
+        ], 
+        icon: Smartphone,
+        color: "text-green-400"
+      },
+      { 
+        title: "3. Documentation & Knowledge", 
+        items: [
+          "Dokumentasi API (Swagger/Postman)", 
+          "User Manual Guide (PDF/Video)", 
+          "SOP Penanganan Error Dasar"
+        ], 
+        icon: FolderCheck,
+        color: "text-gold-400"
+      },
+      { 
+        title: "4. Service Warranty", 
+        items: [
+          "30 Hari Priority Bug Fix Guarantee", 
+          "Sesi Training Staff (Online/Offline)", 
+          "Pendampingan Deployment ke Play Store"
+        ], 
+        icon: ShieldCheck,
+        color: "text-purple-400"
+      },
     ],
-    footer: "🛡️ GARANSI UANG KEMBALI 30 HARI"
+    footer: "🛡️ 100% TRANSPARAN: ANDA MEMEGANG KUNCI UTAMA SISTEM INI"
   },
   {
     id: 16,
