@@ -51,6 +51,10 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
 
   switch (data.layout) {
     case SlideLayout.TITLE:
+      // FIX: Extract logic outside of JSX to guarantee type safety for TypeScript
+      const titleFooterParts = data.footer ? data.footer.split('|') : ["", ""];
+      const titleParts = data.title.split(':');
+
       return (
         <div className="flex flex-col items-center justify-center min-h-full text-center px-5 relative overflow-hidden py-8 md:py-12 bg-navy-900">
           {/* Background Image (Building Element) */}
@@ -70,11 +74,11 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
               </motion.div>
               
               <motion.h1 variants={itemVariants} className="text-[40px] md:text-8xl font-serif font-bold text-white mb-2 leading-tight drop-shadow-2xl tracking-tight">
-                {data.title.split(':')[0]}
+                {titleParts[0]}
               </motion.h1>
               
               <motion.div variants={itemVariants} className="text-2xl md:text-5xl font-sans font-light text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-gold-400 to-gold-600 mb-10 tracking-wide">
-                {data.title.split(':')[1]}
+                {titleParts[1] || ''}
               </motion.div>
 
               {/* Decorative Separator */}
@@ -96,10 +100,10 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
             <motion.div variants={itemVariants} className="w-full">
               {data.footer && (
                 <div className="text-sm text-slate-500 border-t border-slate-700/50 pt-6 mb-4 flex flex-col md:flex-row justify-center items-center gap-2">
-                  {/* Using nullish coalescing to safely split, satisfying TS strict null checks */}
-                  <span>{(data.footer ?? "").split('|')[0]}</span>
+                  {/* Now safe because titleFooterParts is computed outside JSX */}
+                  <span>{titleFooterParts[0]}</span>
                   <span className="hidden md:inline text-gold-500/50">•</span>
-                  <span className="text-slate-600">{(data.footer ?? "").split('|')[1] || ''}</span>
+                  <span className="text-slate-600">{titleFooterParts[1] || ''}</span>
                 </div>
               )}
               <div className="text-gold-500/50 text-xs animate-pulse font-mono md:hidden">
