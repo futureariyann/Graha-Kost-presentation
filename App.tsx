@@ -7,6 +7,9 @@ const App: React.FC = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isFullScreen, setIsFullScreen] = useState(false);
   
+  // Ref for the scrollable container
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  
   const nextSlide = useCallback(() => {
     setCurrentSlideIndex((prev) => {
       const nextIndex = Math.min(prev + 1, SLIDES.length - 1);
@@ -47,6 +50,13 @@ const App: React.FC = () => {
     }
   }, []);
 
+  // Scroll Reset Effect: Triggered whenever currentSlideIndex changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentSlideIndex]);
+
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
@@ -80,8 +90,11 @@ const App: React.FC = () => {
         </button>
       </div>
 
-      {/* Main Slide Area */}
-      <div className="flex-1 relative overflow-y-auto overflow-x-hidden scroll-smooth">
+      {/* Main Slide Area with Ref for Scrolling */}
+      <div 
+        ref={scrollContainerRef}
+        className="flex-1 relative overflow-y-auto overflow-x-hidden scroll-smooth"
+      >
         <div className="fixed inset-x-0 top-12 bottom-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-navy-800 via-navy-900 to-black pointer-events-none" />
         
         {/* Render Slide - Padding bottom adjusted for mobile nav bar */}

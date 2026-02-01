@@ -81,12 +81,12 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
                 {titleParts[1] || ''}
               </motion.div>
 
-              {/* Decorative Separator */}
-              <motion.div variants={itemVariants} className="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mb-10 opacity-50" />
+              {/* Decorative Separator - Increased spacing (my-12) to fix "terlalu mepet" issue */}
+              <motion.div variants={itemVariants} className="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent my-8 md:my-12 opacity-50" />
 
               {/* Subtitle / Tagline */}
               {data.subtitle && (
-                 <motion.h2 variants={itemVariants} className="text-gold-400 font-mono text-sm md:text-lg tracking-[0.3em] uppercase mb-4 font-bold opacity-90">
+                 <motion.h2 variants={itemVariants} className="text-gold-400 font-mono text-sm md:text-lg tracking-[0.3em] uppercase mb-6 font-bold opacity-90">
                     {data.subtitle}
                  </motion.h2>
               )}
@@ -99,7 +99,8 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
             
             <motion.div variants={itemVariants} className="w-full">
               {data.footer && (
-                <div className="text-sm text-slate-500 border-t border-slate-700/50 pt-6 mb-4 flex flex-col md:flex-row justify-center items-center gap-2">
+                // Changed text-slate-500 to text-slate-400 for better visibility
+                <div className="text-sm text-slate-400 border-t border-slate-700/50 pt-6 mb-4 flex flex-col md:flex-row justify-center items-center gap-2">
                   <span>{titleFooterParts[0]}</span>
                   <span className="hidden md:inline text-gold-500/50">•</span>
                   <span className="text-slate-600">{titleFooterParts[1] || ''}</span>
