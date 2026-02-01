@@ -321,8 +321,8 @@ Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin 
     highlights: [
       "🖥️ VPS Cloud Server (High Performance)",
       "🗄️ Managed Database & Daily Backup",
-      "🔒 Domain .com & SSL Security",
-      "🛡️ Cloudflare Enterprise Protection"
+      "🔒 SSL Security",
+      "🛡️ Proactive Shielding: Firewall anf security monitoring."
     ],
     extra: {
       specialBox: {
@@ -343,12 +343,12 @@ Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin 
     layout: SlideLayout.SPLIT,
     title: "Partnership Lifecycle",
     subtitle: "Menjaga Keberlanjutan Sistem Jangka Panjang",
-    content: "**Fase 1: Development & Warranty (0-3 Bulan)**\nFokus pada pembangunan aset digital yang solid. Termasuk garansi bug fixing intensif pasca-launching untuk memastikan sistem berjalan mulus sesuai operasional Graha Kost.",
+    content: "**Fase 1: Development & Warranty**\nFokus pada pembangunan aset digital yang solid. Termasuk garansi bug fixing intensif pasca-launching untuk memastikan sistem berjalan mulus sesuai operasional Graha Kost.",
     extra: {
       specialBox: {
         title: "Fase 2: Operational Assurance",
         content: "Sistem digital seperti mobil; butuh servis rutin agar tidak mogok. Kami menjadi 'Bengkel Resmi' Anda.",
-        highlight: "Rp 2.500.000 / Bulan (Flat)",
+        highlight: "Rp 2.500.000 / Bulan",
         subtext: "Investasi kecil untuk melindungi omzet milyaran. Mencegah sistem down, data hilang, atau serangan siber.",
         details: [
           "Cover Biaya Server & Database",
@@ -456,7 +456,7 @@ Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin 
     layout: SlideLayout.CTA,
     title: "Mulai Transformasi Digital Graha Kost",
     subtitle: "4 Langkah Mudah Menuju Sistem Auto-Pilot",
-    content: "Slot Januari 2026: 1 TERISI | 1 SISA",
+    content: "Slot February 2026: 1 TERISI | 1 SISA",
     extra: [
       "Approve & Pilih Paket",
       "Sign Contract & DP 40%",
