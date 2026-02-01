@@ -322,7 +322,7 @@ Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin 
       "🖥️ VPS Cloud Server (High Performance)",
       "🗄️ Managed Database & Daily Backup",
       "🔒 SSL Security",
-      "🛡️ Proactive Shielding: Firewall anf security monitoring."
+      "🛡️ Proactive Shielding: Firewall and security monitoring."
     ],
     extra: {
       specialBox: {
