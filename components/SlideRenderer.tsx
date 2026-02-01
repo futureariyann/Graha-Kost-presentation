@@ -52,27 +52,52 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
   switch (data.layout) {
     case SlideLayout.TITLE:
       return (
-        <div className="flex flex-col items-center justify-center min-h-full text-center px-5 relative overflow-hidden py-8 md:py-12">
-          {/* Background */}
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=2000&auto=format&fit=crop')] opacity-20 bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-900/90 to-navy-900" />
+        <div className="flex flex-col items-center justify-center min-h-full text-center px-5 relative overflow-hidden py-8 md:py-12 bg-navy-900">
+          {/* Background Image (Building Element) */}
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=2000&auto=format&fit=crop')] opacity-40 bg-cover bg-center mix-blend-overlay" />
           
-          <motion.div variants={containerVariants} initial="hidden" animate="visible" className="relative z-10 max-w-4xl flex flex-col items-center justify-between h-full py-6">
-            <div className="flex-1 flex flex-col justify-center">
-               <motion.div variants={itemVariants} className="mb-6 inline-block px-4 py-1 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 text-xs font-semibold tracking-wider">
-                PROPOSAL 2026
+          {/* Primary Gradient Overlay (Navy) */}
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-900/95 via-navy-900/80 to-navy-900" />
+          
+          {/* Subtle Gold Gradient Accents */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gold-600/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
+          
+          <motion.div variants={containerVariants} initial="hidden" animate="visible" className="relative z-10 max-w-5xl flex flex-col items-center justify-between h-full py-6">
+            <div className="flex-1 flex flex-col justify-center items-center w-full">
+               <motion.div variants={itemVariants} className="mb-6 inline-block px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 text-xs font-semibold tracking-[0.2em] backdrop-blur-sm shadow-[0_0_15px_rgba(234,179,8,0.1)] uppercase">
+                Proposal 2026
               </motion.div>
-              <motion.h1 variants={itemVariants} className="text-[32px] md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-                {data.title.split(':')[0]} <span className="text-gold-400 block mt-2 text-2xl md:text-5xl font-sans font-light">{data.title.split(':')[1]}</span>
+              
+              <motion.h1 variants={itemVariants} className="text-[40px] md:text-8xl font-serif font-bold text-white mb-2 leading-tight drop-shadow-2xl tracking-tight">
+                {data.title.split(':')[0]}
               </motion.h1>
-              <motion.p variants={itemVariants} className="text-lg md:text-2xl text-slate-300 font-light mb-8">
+              
+              <motion.div variants={itemVariants} className="text-2xl md:text-5xl font-sans font-light text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-gold-400 to-gold-600 mb-10 tracking-wide">
+                {data.title.split(':')[1]}
+              </motion.div>
+
+              {/* Decorative Separator */}
+              <motion.div variants={itemVariants} className="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mb-10 opacity-50" />
+
+              {/* Subtitle / Tagline (New Addition to fill gap) */}
+              {data.subtitle && (
+                 <motion.h2 variants={itemVariants} className="text-gold-400 font-mono text-sm md:text-lg tracking-[0.3em] uppercase mb-4 font-bold opacity-90">
+                    {data.subtitle}
+                 </motion.h2>
+              )}
+
+              {/* Main Content (The English Text) */}
+              <motion.p variants={itemVariants} className="text-lg md:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed px-4">
                 {data.content}
               </motion.p>
             </div>
             
             <motion.div variants={itemVariants} className="w-full">
-              <div className="text-sm text-slate-500 border-t border-slate-700 pt-6 mb-4">
-                {data.footer}
+              <div className="text-sm text-slate-500 border-t border-slate-700/50 pt-6 mb-4 flex flex-col md:flex-row justify-center items-center gap-2">
+                <span>{data.footer.split('|')[0]}</span>
+                <span className="hidden md:inline text-gold-500/50">•</span>
+                <span className="text-slate-600">{data.footer.split('|')[1]}</span>
               </div>
               <div className="text-gold-500/50 text-xs animate-pulse font-mono md:hidden">
                 Swipe to explore &rarr;

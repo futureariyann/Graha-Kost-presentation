@@ -8,7 +8,7 @@ import {
   Users, 
   FileText, 
   TrendingUp,
-  AlertTriangle,
+  AlertTriangle, 
   Server,
   Code,
   Clock,
@@ -41,8 +41,8 @@ export const SLIDES: SlideData[] = [
     id: 1,
     layout: SlideLayout.TITLE,
     title: "GRAHA KOST v2.0: Transformasi Digital untuk 1000 Kamar",
-    subtitle: "Scalable Property Management System",
-    content: "Dari manajemen manual yang memakan waktu, ke sistem autopilot yang memaksimalkan profit Anda.",
+    subtitle: "INTELLIGENT PROPERTY ECOSYSTEM",
+    content: "Transition from manual complexity to a fully automated autopilot system. Maximize your occupancy and profit with zero operational friction.",
     footer: "Prepared by: Flowmind Creative Tech Agency | For: Bapak Agung Rizki Sanjaya | Date: February 2026"
   },
   {
