@@ -7,10 +7,6 @@ const App: React.FC = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isFullScreen, setIsFullScreen] = useState(false);
   
-  // Touch Handling State
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-
   const nextSlide = useCallback(() => {
     setCurrentSlideIndex((prev) => {
       const nextIndex = Math.min(prev + 1, SLIDES.length - 1);
@@ -51,33 +47,6 @@ const App: React.FC = () => {
     }
   }, []);
 
-  // Touch Swipe Handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    
-    const distance = touchStartX.current - touchEndX.current;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) {
-      nextSlide();
-    } else if (isRightSwipe) {
-      prevSlide();
-    }
-
-    // Reset
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
-
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
@@ -96,9 +65,6 @@ const App: React.FC = () => {
   return (
     <div 
       className="h-screen w-screen bg-[#0a192f] text-slate-200 overflow-hidden flex flex-col font-sans"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
     >
       
       {/* Top Bar */}
@@ -127,27 +93,27 @@ const App: React.FC = () => {
       {/* Navigation Bar (Responsive) */}
       
       {/* Mobile: Full Width Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 h-[80px] bg-navy-900 border-t border-gold-500/30 flex items-center justify-between px-4 z-50 pb-safe">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 h-[70px] bg-navy-900 border-t border-gold-500/30 flex items-center justify-between px-4 z-50 pb-safe">
         <button 
           onClick={prevSlide}
           disabled={currentSlideIndex === 0}
-          className={`w-[60px] h-[60px] flex items-center justify-center rounded-lg bg-gold-500 text-navy-900 shadow-lg active:scale-95 transition-all ${currentSlideIndex === 0 ? 'opacity-50 cursor-not-allowed bg-slate-700 text-slate-400' : ''}`}
+          className={`w-12 h-12 flex items-center justify-center rounded-lg bg-gold-500 text-navy-900 shadow-lg active:scale-95 transition-all ${currentSlideIndex === 0 ? 'opacity-50 cursor-not-allowed bg-slate-700 text-slate-400' : ''}`}
           aria-label="Previous Slide"
         >
-          <ChevronLeft size={32} />
+          <ChevronLeft size={24} />
         </button>
         
-        <span className="text-gold-400 font-mono font-bold text-base">
+        <span className="text-gold-400 font-mono font-bold text-sm">
           {currentSlideIndex + 1} / {SLIDES.length}
         </span>
 
         <button 
           onClick={nextSlide}
           disabled={currentSlideIndex === SLIDES.length - 1}
-          className={`w-[60px] h-[60px] flex items-center justify-center rounded-lg bg-gold-500 text-navy-900 shadow-lg active:scale-95 transition-all ${currentSlideIndex === SLIDES.length - 1 ? 'opacity-50 cursor-not-allowed bg-slate-700 text-slate-400' : ''}`}
+          className={`w-12 h-12 flex items-center justify-center rounded-lg bg-gold-500 text-navy-900 shadow-lg active:scale-95 transition-all ${currentSlideIndex === SLIDES.length - 1 ? 'opacity-50 cursor-not-allowed bg-slate-700 text-slate-400' : ''}`}
            aria-label="Next Slide"
         >
-          <ChevronRight size={32} />
+          <ChevronRight size={24} />
         </button>
       </div>
 

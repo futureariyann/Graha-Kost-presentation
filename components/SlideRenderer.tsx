@@ -293,30 +293,33 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
 
     case SlideLayout.PAIN_POINTS:
       return (
-        <div className="flex flex-col min-h-full p-5 md:p-16">
-           <motion.div variants={containerVariants} initial="hidden" animate="visible">
+        <div className="flex flex-col min-h-full p-5 md:p-16 relative">
+           <motion.div variants={containerVariants} initial="hidden" animate="visible" className="w-full">
             <Header />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 md:mt-8 mb-8">
+              {data.extra?.map((item: any, idx: number) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 + (idx * 0.1) }}
+                  className="bg-gradient-to-br from-navy-800 to-navy-900 p-8 rounded-2xl border border-red-500/20 relative overflow-hidden group"
+                >
+                  <div className={`absolute top-0 right-0 p-4 opacity-10 ${item.color} group-hover:opacity-20 transition-opacity`}>
+                    <item.icon size={100} />
+                  </div>
+                  <h3 className={`text-sm font-bold uppercase tracking-widest mb-2 ${item.color}`}>{item.title}</h3>
+                  <div className="text-3xl font-bold text-white mb-4">{item.value}</div>
+                  <p className="text-slate-400 text-lg md:text-base">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 md:mt-8">
-            {data.extra?.map((item: any, idx: number) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 + (idx * 0.1) }}
-                className="bg-gradient-to-br from-navy-800 to-navy-900 p-8 rounded-2xl border border-red-500/20 relative overflow-hidden group"
-              >
-                <div className={`absolute top-0 right-0 p-4 opacity-10 ${item.color} group-hover:opacity-20 transition-opacity`}>
-                  <item.icon size={100} />
-                </div>
-                <h3 className={`text-sm font-bold uppercase tracking-widest mb-2 ${item.color}`}>{item.title}</h3>
-                <div className="text-3xl font-bold text-white mb-4">{item.value}</div>
-                <p className="text-slate-400 text-lg md:text-base">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-          <div className="mt-auto mb-4 bg-navy-800 border border-gold-500/30 p-6 rounded-lg text-center mt-12 shadow-lg">
-             <span className="text-gold-400 font-bold tracking-widest text-lg">{data.footer}</span>
+          
+          <div className="mt-auto pt-4 md:pt-8 w-full z-10">
+             <div className="bg-navy-800 border border-gold-500/30 p-4 md:p-6 rounded-lg text-center shadow-lg">
+               <span className="text-gold-400 font-bold tracking-widest text-base md:text-lg block">{data.footer}</span>
+             </div>
           </div>
         </div>
       );

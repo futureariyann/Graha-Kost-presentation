@@ -164,7 +164,7 @@ Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin 
           items: [
             "Database lengkap: profil, KTP, kontak darurat, nomor plat kendaraan",
             "Tracking kontrak dengan notifikasi perpanjangan otomatis",
-            "Riwayat pembayaran dan unduh kwitansi digital",
+            "Request Laundry via App & Monitoring Status Cucian",
             "Emergency contact dan catatan khusus penghuni"
           ]
         },
@@ -173,8 +173,8 @@ Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin 
           icon: Wrench,
           items: [
             "Ticketing perbaikan kerusakan dengan foto dan prioritas (urgent/normal)",
+            "Manajemen Laundry: Input timbangan, update status, auto-tagihan ke kamar",
             "Tracking status perbaikan dari masuk hingga selesai",
-            "Sistem pencatatan laundry: tracking credit/billing & notifikasi pickup",
             "Inventaris aset kamar untuk maintenance preventif"
           ]
         },
