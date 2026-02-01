@@ -9,7 +9,7 @@ This project is a high-performance, interactive slide deck built with web techno
 ## 🛠 Tech Stack
 
 - **Framework:** React 18 + Vite
-- **Styling:** Tailwind CSS
+- **Styling:** Tailwind CSS (via CDN)
 - **Animations:** Framer Motion
 - **Icons:** Lucide React
 - **Charts:** Recharts
@@ -23,11 +23,10 @@ This project is a high-performance, interactive slide deck built with web techno
    cd graha-kost-proposal
    ```
 
-2. **Install dependencies (Deterministic)**
+2. **Install dependencies**
    ```bash
-   npm ci
+   npm install
    ```
-   *Note: Using `npm ci` ensures you install the exact versions defined in `package-lock.json`.*
 
 3. **Run local development server**
    ```bash
@@ -43,27 +42,22 @@ This project is a high-performance, interactive slide deck built with web techno
 
 This project is optimized for Cloudflare Pages.
 
-### Option 1: Connect via Dashboard (Recommended)
-1. Go to the Cloudflare Dashboard > **Workers & Pages**.
-2. Click **Create Application** > **Pages** > **Connect to Git**.
-3. Select this repository.
-4. Configure the build settings:
-   - **Framework Preset:** Vite
-   - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-   - **Node Version:** Add an Environment Variable named `NODE_VERSION` with value `20`.
-5. Click **Save and Deploy**.
+### Configuration Settings
+When connecting your Git repository to Cloudflare Pages, use these settings:
 
-### Option 2: CLI Deployment (Manual)
-If you prefer deploying from your terminal:
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-2. Deploy the `dist` folder:
-   ```bash
-   npx wrangler pages deploy dist --project-name=graha-kost-proposal
-   ```
+- **Framework Preset:** Vite
+- **Build command:** `npm install && npm run build`
+- **Build output directory:** `dist`
+- **Environment Variables:**
+  - `NODE_VERSION`: `20`
+
+> **Note:** Do not use `npm ci` unless you have committed a `package-lock.json` file to your repository. The command `npm install` is safer for the initial deployment.
+
+### Troubleshooting
+If you see an error saying `npm ci can only install with an existing package-lock.json`, verify that your **Build command** in Cloudflare Settings > Builds & deployments is set to:
+```bash
+npm install && npm run build
+```
 
 ## 📄 License
 
