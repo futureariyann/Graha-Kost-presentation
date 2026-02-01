@@ -392,9 +392,9 @@ Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin 
         name: "Software House Lain", 
         pros: ["Tim teknis banyak"], 
         cons: [
-          "Mahal: Project sejenis biasanya Rp 50Jt+",
+          "Mahal: Project sejenis biasanya Rp 100Jt+",
           "Vendor Lock-in: Source code sering ditahan",
-          "Biaya Maintenance Mahal & Respons Lambat",
+          "Biaya Maintenance Mahal 6-12jt/bulan & Respons Lambat",
           "Tidak Paham Lapangan (Cuma bisa coding)"
         ],
         icon: Building2
