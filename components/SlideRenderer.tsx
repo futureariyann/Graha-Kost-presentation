@@ -94,11 +94,13 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
             </div>
             
             <motion.div variants={itemVariants} className="w-full">
-              <div className="text-sm text-slate-500 border-t border-slate-700/50 pt-6 mb-4 flex flex-col md:flex-row justify-center items-center gap-2">
-                <span>{data.footer.split('|')[0]}</span>
-                <span className="hidden md:inline text-gold-500/50">•</span>
-                <span className="text-slate-600">{data.footer.split('|')[1]}</span>
-              </div>
+              {data.footer && (
+                <div className="text-sm text-slate-500 border-t border-slate-700/50 pt-6 mb-4 flex flex-col md:flex-row justify-center items-center gap-2">
+                  <span>{data.footer.split('|')[0]}</span>
+                  <span className="hidden md:inline text-gold-500/50">•</span>
+                  <span className="text-slate-600">{data.footer.split('|')[1] || ''}</span>
+                </div>
+              )}
               <div className="text-gold-500/50 text-xs animate-pulse font-mono md:hidden">
                 Swipe to explore &rarr;
               </div>
