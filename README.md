@@ -1,20 +1,70 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Graha Kost v2.0 Proposal - Digital Transformation
 
-# Run and deploy your AI Studio app
+Interactive digital presentation deck built for Flowmind Agency to propose the digital transformation of Graha Kost (1000 rooms).
 
-This contains everything you need to run your app locally.
+## 🚀 Overview
 
-View your app in AI Studio: https://ai.studio/apps/drive/1XCo4cUSxnUTppnF9gPMO2AWoBCjpOEi9
+This project is a high-performance, interactive slide deck built with web technologies to replace traditional PowerPoint/PDF presentations. It features smooth transitions, interactive charts, and responsive design optimized for both desktop projectors and mobile devices.
 
-## Run Locally
+## 🛠 Tech Stack
 
-**Prerequisites:**  Node.js
+- **Framework:** React 18 + Vite
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Charts:** Recharts
+- **Language:** TypeScript
 
+## 📦 Local Development
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Clone the repository**
+   ```bash
+   git clone <YOUR_REPO_URL>
+   cd graha-kost-proposal
+   ```
+
+2. **Install dependencies (Deterministic)**
+   ```bash
+   npm ci
+   ```
+   *Note: Using `npm ci` ensures you install the exact versions defined in `package-lock.json`.*
+
+3. **Run local development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## ☁️ Deployment (Cloudflare Pages)
+
+This project is optimized for Cloudflare Pages.
+
+### Option 1: Connect via Dashboard (Recommended)
+1. Go to the Cloudflare Dashboard > **Workers & Pages**.
+2. Click **Create Application** > **Pages** > **Connect to Git**.
+3. Select this repository.
+4. Configure the build settings:
+   - **Framework Preset:** Vite
+   - **Build command:** `npm run build`
+   - **Build output directory:** `dist`
+   - **Node Version:** Add an Environment Variable named `NODE_VERSION` with value `20`.
+5. Click **Save and Deploy**.
+
+### Option 2: CLI Deployment (Manual)
+If you prefer deploying from your terminal:
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+2. Deploy the `dist` folder:
+   ```bash
+   npx wrangler pages deploy dist --project-name=graha-kost-proposal
+   ```
+
+## 📄 License
+
+Proprietary content for Flowmind Agency.
