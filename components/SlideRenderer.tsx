@@ -327,7 +327,7 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
           
           <div className="mt-auto pt-4 md:pt-8 w-full z-10">
              <div className="bg-navy-800 border border-gold-500/30 p-4 md:p-6 rounded-lg text-center shadow-lg">
-               <span className="text-gold-400 font-bold tracking-widest text-base md:text-lg block">{data.footer ?? ''}</span>
+               <span className="text-gold-400 font-bold tracking-widest text-base md:text-lg block">{data.footer}</span>
              </div>
           </div>
         </div>
@@ -341,7 +341,7 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 flex-1 mt-4">
-             {data.extra?.features?.map((feature: any, idx: number) => (
+             {data.extra.features?.map((feature: any, idx: number) => (
                <motion.div 
                  key={idx} 
                  initial={{ opacity: 0, y: 15 }} 
@@ -520,7 +520,7 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
                animate="visible"
                className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch"
              >
-                {data.extra?.map((comp: any, idx: number) => (
+                {data.extra.map((comp: any, idx: number) => (
                   <motion.div 
                     key={idx}
                     variants={itemVariants}

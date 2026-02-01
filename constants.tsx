@@ -310,7 +310,7 @@ Sistem kami dirancang bukan hanya untuk mencatat, tapi untuk mengotomasi. Admin 
         rec: false
       }
     ],
-    footer: "Maintenance service mulai dari Rp 2.500.000 untuk kontrak 1 tahun pertama."
+    footer: "Maintenance service mulai dari Rp 2.500.000/bulan untuk kontrak 1 tahun pertama."
   },
   {
     id: 12,
