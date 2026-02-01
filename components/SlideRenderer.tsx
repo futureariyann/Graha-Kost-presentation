@@ -51,8 +51,8 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
 
   switch (data.layout) {
     case SlideLayout.TITLE:
-      // FIX: Extract logic outside of JSX to guarantee type safety for TypeScript
-      const titleFooterParts = data.footer ? data.footer.split('|') : ["", ""];
+      // FIX: Extract logic and use nullish coalescing to satisfy TypeScript strict checks
+      const titleFooterParts = (data.footer ?? "").split('|');
       const titleParts = data.title.split(':');
 
       return (
@@ -84,14 +84,14 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
               {/* Decorative Separator */}
               <motion.div variants={itemVariants} className="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mb-10 opacity-50" />
 
-              {/* Subtitle / Tagline (New Addition to fill gap) */}
+              {/* Subtitle / Tagline */}
               {data.subtitle && (
                  <motion.h2 variants={itemVariants} className="text-gold-400 font-mono text-sm md:text-lg tracking-[0.3em] uppercase mb-4 font-bold opacity-90">
                     {data.subtitle}
                  </motion.h2>
               )}
 
-              {/* Main Content (The English Text) */}
+              {/* Main Content */}
               <motion.p variants={itemVariants} className="text-lg md:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed px-4">
                 {data.content}
               </motion.p>
@@ -100,7 +100,6 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
             <motion.div variants={itemVariants} className="w-full">
               {data.footer && (
                 <div className="text-sm text-slate-500 border-t border-slate-700/50 pt-6 mb-4 flex flex-col md:flex-row justify-center items-center gap-2">
-                  {/* Now safe because titleFooterParts is computed outside JSX */}
                   <span>{titleFooterParts[0]}</span>
                   <span className="hidden md:inline text-gold-500/50">•</span>
                   <span className="text-slate-600">{titleFooterParts[1] || ''}</span>
@@ -116,6 +115,9 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
 
     case SlideLayout.SPLIT:
       const hasImage = !!data.visualPrompt;
+      // FIX: Extract logic and use nullish coalescing for content split
+      const contentParts = (data.content ?? "").split('**');
+      
       return (
         <div className={`flex flex-col ${hasImage ? 'md:grid md:grid-cols-2' : ''} gap-8 min-h-full p-5 md:p-16`}>
           {/* Text Content */}
@@ -130,7 +132,7 @@ export const SlideRenderer: React.FC<SlideRendererProps> = ({ data }) => {
             {/* Standard Content with Bold Support */}
             {data.content && (
               <motion.div variants={itemVariants} className="text-slate-300 text-lg leading-relaxed mb-6 whitespace-pre-line">
-                {data.content.split('**').map((part, i) => 
+                {contentParts.map((part, i) => 
                   i % 2 === 1 ? <span key={i} className="text-white font-bold text-xl block mb-2 mt-4">{part}</span> : part
                 )}
               </motion.div>
